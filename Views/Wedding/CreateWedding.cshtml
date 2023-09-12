@@ -1,0 +1,30 @@
+@model Wedding
+@{
+    ViewData["Title"] = "Wedding Page";
+}
+<div class="text-center">
+    <h1>Create A Wedding</h1>
+</div>
+<form asp-action="CreateWedding" asp-controller="Wedding" method="post">
+    <div class="mt-3">
+        <label asp-for="NameOne">Wedder One:</label>
+        <input  asp-for="NameOne">
+        <span asp-validation-for="NameOne" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="NameTwo">Wedder Two:</label>
+        <input  asp-for="NameTwo">
+        <span class="text-danger" asp-validation-for="NameTwo"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="WeddingDate">Date:</label>
+        <input  asp-for="WeddingDate">
+        <span class="text-danger" asp-validation-for="WeddingDate"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="Address">Address: </label>
+        <input  asp-for="Address">
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

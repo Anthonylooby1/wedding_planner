@@ -1,0 +1,14 @@
+@model Wedding
+@{
+    ViewData["Title"] = "Single Wedding Page";
+}
+
+<h1>@Model.NameOne & @Model.NameTwo's Wedding</h1>
+<h2>@Model.WeddingDate</h2>
+<h3>Guests:</h3>
+<ul>
+    @foreach (UserWeddingAttend u in Model.UserAttending)
+    {
+        <li>@u.Attending.Name @u.Attending.LastName</li>
+    }
+</ul>
